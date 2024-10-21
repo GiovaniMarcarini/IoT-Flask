@@ -11,8 +11,41 @@
     </style>
 </head>
 <body>
-
-
+    <div class="col-md-12 fundo" align="center">
+        <div class="d-flex justify-content-center">
+            <h1>Olá, bem vindo ao GERENCIADOR!</h1>
+        </div>
+    </div>
+    <div class="w-100 p3">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Sensor</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Status Led</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Umidade</th>
+                    <td>
+                        <h5>Valor?</h5>
+                    </td>
+                    <td>
+                        <h5>{{ledRed}}</h5>
+                    </td>
+                    <td>
+                        {% if ledRed == 'LED vermelho ON' %}
+                        <a class="btn btn-primary" href="/led_vermelho/off" role="button">Desligar</a>
+                        {% else %}
+                        <a class="btn btn-primary" href="/led_vermelho/on" role="button">Ligar</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename="js/bootstrap.min.js") }}"></script>
 </body>
